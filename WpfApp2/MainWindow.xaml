@@ -40,6 +40,9 @@
                 <Button Command="{Binding Augmenter}" >Augmenter</Button>
                 <Button Command="{Binding Diminuer}">Diminuer</Button>
                 <Button Command="{Binding Reinitialiser}" >Reinitialiser</Button>
+                <Button Command="{Binding GenericModify}" CommandParameter="add" >Test modif 3en1</Button>
+                <Button Command="{Binding GenericModify}" CommandParameter="del" >Test modif 3en1</Button>
+                <Button Command="{Binding GenericModify}" CommandParameter="reset" >Test modif 3en1</Button>
             </StackPanel>
         </ScrollViewer>
     </Grid>

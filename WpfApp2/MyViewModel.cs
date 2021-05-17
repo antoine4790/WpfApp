@@ -195,6 +195,24 @@ namespace WpfApp2
                 });
             }
         }
+
+        public ICommand GenericModify
+        {
+            get
+            {
+                return new RelayCommand(param =>
+                {
+                    if (param.ToString() == "add")
+                        Compteur++;
+                    else if (param.ToString() == "del")
+                        Compteur--;
+                    else if (param.ToString() == "reset")
+                        Compteur = 0;
+                    else
+                        throw new Exception();
+                });
+            }
+        }
         #endregion
     }
 }
