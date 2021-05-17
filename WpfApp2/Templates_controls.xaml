@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate x:Key="CircleTemplateButton" TargetType="{x:Type Button}">
+        <Grid>
+            <Ellipse Height="100" Width="100" x:Name="SimpleButton" 
+                     Stroke="#FF051F42" StrokeThickness="2" Fill="gray"/>
+            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                              RecognizesAccessKey="True" />
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

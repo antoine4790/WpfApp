@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:MyViewModel}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel >
+                <TextBlock Text="{Binding Test}"></TextBlock>
+                <TextBox Name ="input" Text="{Binding Test, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Button Content="Edit" Command="{Binding EditInput}"></Button>
+                <Label>----------------------------------------------------------------------------------------------------------------------------------------------</Label>
+                <Button Command="{Binding EditList}" >test</Button>
+                <Button Command="{Binding EditList}" >Ajouter Element</Button>
+                <Button Command="{Binding UpdateList}">Modifier Element</Button>
+                <Button Command="{Binding DeleteElementList}">Supprimer Element</Button>
+                <ListView ItemsSource="{Binding Valeurs}" SelectedIndex="{Binding Index}"></ListView>
+                <Label>----------------------------------------------------------------------------------------------------------------------------------------------</Label>
+                <Button Command="{Binding AddMessage}" >Ajouter Element</Button>
+                <Button Command="{Binding ModifyMessage}">Modifier 1er Element</Button>
+                <Button Command="{Binding DeleteFirstMessage}" >Supprimer 1er Element</Button>
+                <Button Command="{Binding DeleteSelectedMessage}">Supprimer Message selection</Button>
+                <ListBox ItemsSource="{Binding Messages}" ItemTemplate="{DynamicResource ListItemTemplate}" SelectedIndex="{Binding SelectedIndex}" ></ListBox>
+                <Label>----------------------------------------------------------------------------------------------------------------------------------------------</Label>
+                <ListBox ItemsSource="{Binding ListeImages}" ItemTemplate="{DynamicResource ListImageTemplate}" SelectedIndex="{Binding SelectedIndex}" ></ListBox>
+                <ComboBox ItemsSource="{Binding ListeImages}" ItemTemplate="{DynamicResource ListImageTemplate}" SelectedIndex="{Binding SelectedIndex}" ></ComboBox>
+                <Label>----------------------------------------------------------------------------------------------------------------------------------------------</Label>
+                <Label Style="{DynamicResource labelBlue}" Content="TEst"></Label>
+                <Label>----------------------------------------------------------------------------------------------------------------------------------------------</Label>
+                <Button Template="{DynamicResource CircleTemplateButton}" 
+                        Name="cmdOk" Content="Appuie" Height="100" Width="100" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top"></Button>
+                <Label>----------------------------------------------------------------------------------------------------------------------------------------------</Label>
+                <Label>Compteur</Label>
+                <TextBlock Text="{Binding Compteur}"></TextBlock>
+                <Button Command="{Binding Augmenter}" >Augmenter</Button>
+                <Button Command="{Binding Diminuer}">Diminuer</Button>
+                <Button Command="{Binding Reinitialiser}" >Reinitialiser</Button>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
